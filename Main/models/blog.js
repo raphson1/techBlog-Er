@@ -16,16 +16,16 @@ Blog.init (
         allowNull: false,
         }, 
         description: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         date_created: {
-            type: Datatypes.DATE,
+            type: DataTypes.DATE,
             allowNull: false,
-            defaultValue: Datatypes.NOW
+            defaultValue: DataTypes.NOW
         },
         user_id: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id'
