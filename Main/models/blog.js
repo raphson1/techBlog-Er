@@ -32,6 +32,7 @@ Blog.init (
             }
         }
 },
+
 {
     sequelize,
     timestamps: false,
