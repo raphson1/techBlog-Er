@@ -1,0 +1,64 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: beige;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+body header {
+    background-color: rgb(65, 38, 19);
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+header a {
+    display: inline;
+    flex-direction: row;
+    color: beige;
+    text-decoration: none;
+    margin: 10px;
+}
+
+header h1 {
+    padding-top: 2px;
+    background-color: beige;
+    height:max-content;
+    width: max-content;
+    color: rgb(65, 38, 19);
+}
+
+.blog {
+    padding-left: 30px;
+    padding-right: 30px;
+    border: solid rgb(65, 38, 19);
+    margin-bottom: 5px;
+  
+}
+
+.blog #blogTitle{
+    background-color:  rgb(65, 38, 19);
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: beige;
+}
+
+.blog a{
+    color: beige;
+    font-size: medium;
+    text-decoration: none;
+}
+#blogTitle p{
+    font-size: smaller;
+}
+.blog .description {
+    font-size: small;
+}
+
+
