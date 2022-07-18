@@ -1,0 +1,23 @@
+<div class="blog">
+    <div class="blogTitle" id="blogTitle">
+        <h3>
+            <a href="/blog/{{id}}">{{title}}</a>
+        </h3>
+        <p>Posted by {{user.name}} on {{date_created}}</p>
+    </div>
+    <div class="description">
+        <p>
+            {{description}}
+        </p>
+    </div>
+    <div>
+        <h1>Comments</h1>
+        {{#each comments }}
+        <P>
+            {{commentBody}} 
+        </P>
+        {{/each}}
+        <h4></h4>
+
+        
+    </div>
