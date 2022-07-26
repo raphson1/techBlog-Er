@@ -12,12 +12,21 @@
     </div>
     <div>
         <h1>Comments</h1>
-        {{#each comments }}
+        {{#each comments }} 
+        <p>
+       {{comment.user_name}} {{date_created}}   
+        </p>
         <P>
             {{commentBody}} 
         </P>
         {{/each}}
         <h4></h4>
-
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Add comment</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1 comments" rows="3"></textarea>
+                <button type="submit" class="commentBtn">submit</button>
+             </div>
+        </form>
         
     </div>

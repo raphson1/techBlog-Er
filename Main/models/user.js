@@ -5,7 +5,10 @@ const { update } = require('./blog');
 
 class User extends Model {
     checkPassword(loginPw) {
-        return bcrypt.compareSync(loginPw, this.password);
+        console.log(loginPw, 'loginPw')
+        const compared = bcrypt.compareSync(loginPw, this.password);
+        
+        return compared
     }
 }
 
