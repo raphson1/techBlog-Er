@@ -1,9 +1,9 @@
 const blogFormHandler = async (event) => {
     event.preventDefault();
 
-    const title = document.querySelector('#blogTitle').Value.trim();
+    const title = document.querySelector('#blog_title').value.trim();
     console.log(title)
-    const description = document.querySelector('#blogBody').value.trim();
+    const description = document.querySelector('#blog_body').value.trim();
     console.log(description)
 
     if (title && description ) {
@@ -24,9 +24,5 @@ const blogFormHandler = async (event) => {
 
 
 }
-
-document.querySelector('#btnBlog').addEventListener('submit', function(){
-    res.render('/newBlog')
-})
 
 document.querySelector('.new-blog').addEventListener('submit', blogFormHandler)

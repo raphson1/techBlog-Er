@@ -16,8 +16,26 @@
     </div>
 </div>
 {{/each}}
+<div>
+    <div> 
+        <h3>Create a new blog</h3>
+
+        <form class="new-blog">
+            <div>
+                <label for="blogTitle"> Title:</label>
+                <input type="text" name="title" id="blog_title" class="title"/>
+            </div>
+            <div>
+                <label for="blog-body"> Blog:</label>
+                <input type="text" name="blogBody" class="form-input" id="blog_body"/>
+            </div>
+            <button type="submit" class="blog-btn">Create</button>
+        </form>
+    </div>
+</div>
 
 <div class="btnBlog">
+
     <button type="submit" id="btnBlog">Create a new Blog?</button>
 </div>
 <script src="./js/profile.js"></script>

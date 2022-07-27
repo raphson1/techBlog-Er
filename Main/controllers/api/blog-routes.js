@@ -3,12 +3,16 @@ const  { Blog, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
+    const body = req.body;
+    console.log(body)
     try {
         const blogData = await Blog.create({
-            ...req.body,
+            ...body,
             user_id: req.session.user_id,
         })
+        console.log(blogData)
         res.status(200).json(blogData)
+
     } catch (err) {
         res.status(500).json(err)
     }
