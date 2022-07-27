@@ -22,6 +22,26 @@ router.get('/', async (req, res) => {
         res.status(500).json(err)
     }
 });
+router.get('/home', async (req, res) => {
+    try {
+        const blogData = await Blog.findAll({
+            include: [
+                {
+                    model: User,
+                    attributes: ['name'],
+                },
+            ],
+        });
+        const blogs = blogData.map((blog) => blog.get({plain: true}));
+        res.render('homepage', {
+            blogs,
+            logged_in: req.session.logged_in
+        });
+
+    } catch(err) {
+        res.status(500).json(err)
+    }
+});
 
 router.get('/blog/:id', async (req, res) => {
     try {
@@ -64,11 +84,54 @@ router.get('/profile', withAuth, async (req, res) => {
     }
 });
 
+router.get('/profile/newBlog', withAuth, async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{ model: Blog }],
+        });
+
+        const user = userData.get({ plain: true });
+
+        res.render('newBlog', {
+            ...user,
+            logged_in: true
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 router.get('/login', (req, res) => {
     if(req.session.logged_in) {
         res.redirect('/profile');
         return;
     }
+
+    res.render('login');
+});
+
+router.get('/dashboard', (req, res) => {
+    if(req.session.logged_in) {
+        res.redirect('/profile');
+        return;
+    }
+    router.get('/profile/dashboard', withAuth, async (req, res) => {
+        try {
+            const userData = await User.findByPk(req.session.user_id, {
+                attributes: { exclude: ['password'] },
+                include: [{ model: Blog }],
+            });
+    
+            const user = userData.get({ plain: true });
+    
+            res.render('profile', {
+                ...user,
+                logged_in: true
+            });
+        } catch (err) {
+            res.status(500).json(err);
+        }
+    });
 
     res.render('login');
 });
