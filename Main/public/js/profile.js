@@ -21,8 +21,6 @@ const blogFormHandler = async (event) => {
             alert('Failed to create a blog')
         }
     }
-
-
 }
 
-document.querySelector('.new-blog').addEventListener('submit', blogFormHandler)
+document.querySelector('.new-blog').addEventListener('submit', blogFormHandler);

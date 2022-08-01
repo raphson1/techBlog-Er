@@ -10,25 +10,27 @@
             {{description}}
         </p>
     </div>
-    <div>
-        <h1>Comments</h1>
+    <div class="comment">
+        
         {{#each comments }} 
-        <p>
-       {{comment.user_name}} {{date_created}}   
-        </p>
+        <div class="comment_header">
+            <h5>Comments</h5>
+            <p> Commented {{comment.user_name}} on {{date_created}} </p>
+        </div>
+       
         <P>
             {{commentBody}} 
         </P>
         {{/each}}
         <h4></h4>
-        <form>
+        <form class="new-comment" data-id="{{id}}">
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Add comment</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1 comments" rows="3"></textarea>
-                <button type="submit" class="commentBtn">submit</button>
+                <input class="form-control" id="comments" rows="3"></input>
+                <button type="submit"  data-id="{{id}}" class="comment-btn" id="submit-btn">submit</button>
              </div>
         </form>
 
         
     </div>
-    <script src="./js/profile.js"></script>
+    <script src="/js/comment.js"></script>
