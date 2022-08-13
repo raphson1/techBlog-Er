@@ -32,8 +32,8 @@ If you want this application on you local computer fell free to clone it or down
 ## Links
 
 GitHub: https://github.com/raphson1/techBlog-Er
-Deployed: 
+Deployed: https://techblog-er.herokuapp.com/
 
 ## Images
 
- 
+ ![img](./Main/img/img.png)
